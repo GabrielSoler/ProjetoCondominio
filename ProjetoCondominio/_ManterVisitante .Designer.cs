@@ -37,15 +37,17 @@
 			this.btnTudo = new System.Windows.Forms.Button();
 			this.lstPesquisa = new System.Windows.Forms.ListBox();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.btnLimpar = new System.Windows.Forms.Button();
+			this.txtIDVisitante = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
-			this.maskedTextBox5 = new System.Windows.Forms.MaskedTextBox();
+			this.txtApartamento = new System.Windows.Forms.MaskedTextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+			this.txtBloco = new System.Windows.Forms.MaskedTextBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+			this.txtNome = new System.Windows.Forms.MaskedTextBox();
 			this.label5 = new System.Windows.Forms.Label();
-			this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-			this.button1 = new System.Windows.Forms.Button();
+			this.txtCpf = new System.Windows.Forms.MaskedTextBox();
+			this.btnExcluir = new System.Windows.Forms.Button();
 			this.btnSalvar = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.pnlBuscar.SuspendLayout();
@@ -77,6 +79,7 @@
 			this.btnBuscar.TabIndex = 119;
 			this.btnBuscar.Text = "Buscar";
 			this.btnBuscar.UseVisualStyleBackColor = false;
+			this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
 			// 
 			// txtBuscar
 			// 
@@ -120,6 +123,7 @@
 			this.btnTudo.Text = "Exibir Todos";
 			this.btnTudo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnTudo.UseVisualStyleBackColor = false;
+			this.btnTudo.Click += new System.EventHandler(this.btnTudo_Click);
 			// 
 			// lstPesquisa
 			// 
@@ -134,26 +138,50 @@
 			this.lstPesquisa.ScrollAlwaysVisible = true;
 			this.lstPesquisa.Size = new System.Drawing.Size(194, 106);
 			this.lstPesquisa.TabIndex = 7;
+			this.lstPesquisa.Click += new System.EventHandler(this.lstPesquisa_Click);
+			this.lstPesquisa.SelectedIndexChanged += new System.EventHandler(this.lstPesquisa_SelectedIndexChanged);
 			// 
 			// panel2
 			// 
 			this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.panel2.Controls.Add(this.btnLimpar);
+			this.panel2.Controls.Add(this.txtIDVisitante);
 			this.panel2.Controls.Add(this.panel1);
 			this.panel2.Controls.Add(this.label4);
-			this.panel2.Controls.Add(this.maskedTextBox5);
+			this.panel2.Controls.Add(this.txtApartamento);
 			this.panel2.Controls.Add(this.label3);
-			this.panel2.Controls.Add(this.maskedTextBox3);
+			this.panel2.Controls.Add(this.txtBloco);
 			this.panel2.Controls.Add(this.label2);
-			this.panel2.Controls.Add(this.maskedTextBox2);
+			this.panel2.Controls.Add(this.txtNome);
 			this.panel2.Controls.Add(this.label5);
-			this.panel2.Controls.Add(this.maskedTextBox4);
-			this.panel2.Controls.Add(this.button1);
+			this.panel2.Controls.Add(this.txtCpf);
+			this.panel2.Controls.Add(this.btnExcluir);
 			this.panel2.Controls.Add(this.btnSalvar);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel2.Location = new System.Drawing.Point(0, 0);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(735, 380);
 			this.panel2.TabIndex = 128;
+			// 
+			// btnLimpar
+			// 
+			this.btnLimpar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.btnLimpar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnLimpar.Location = new System.Drawing.Point(215, 192);
+			this.btnLimpar.Name = "btnLimpar";
+			this.btnLimpar.Size = new System.Drawing.Size(75, 30);
+			this.btnLimpar.TabIndex = 141;
+			this.btnLimpar.Text = "Limpar";
+			this.btnLimpar.UseVisualStyleBackColor = false;
+			this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+			// 
+			// txtIDVisitante
+			// 
+			this.txtIDVisitante.Location = new System.Drawing.Point(27, 249);
+			this.txtIDVisitante.Name = "txtIDVisitante";
+			this.txtIDVisitante.Size = new System.Drawing.Size(100, 20);
+			this.txtIDVisitante.TabIndex = 140;
+			this.txtIDVisitante.Visible = false;
 			// 
 			// label4
 			// 
@@ -165,13 +193,13 @@
 			this.label4.TabIndex = 139;
 			this.label4.Text = "Apartamento:";
 			// 
-			// maskedTextBox5
+			// txtApartamento
 			// 
-			this.maskedTextBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.maskedTextBox5.Location = new System.Drawing.Point(124, 142);
-			this.maskedTextBox5.Name = "maskedTextBox5";
-			this.maskedTextBox5.Size = new System.Drawing.Size(84, 26);
-			this.maskedTextBox5.TabIndex = 138;
+			this.txtApartamento.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtApartamento.Location = new System.Drawing.Point(124, 142);
+			this.txtApartamento.Name = "txtApartamento";
+			this.txtApartamento.Size = new System.Drawing.Size(84, 26);
+			this.txtApartamento.TabIndex = 138;
 			// 
 			// label3
 			// 
@@ -183,13 +211,13 @@
 			this.label3.TabIndex = 137;
 			this.label3.Text = "Bloco:";
 			// 
-			// maskedTextBox3
+			// txtBloco
 			// 
-			this.maskedTextBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.maskedTextBox3.Location = new System.Drawing.Point(27, 142);
-			this.maskedTextBox3.Name = "maskedTextBox3";
-			this.maskedTextBox3.Size = new System.Drawing.Size(67, 26);
-			this.maskedTextBox3.TabIndex = 136;
+			this.txtBloco.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtBloco.Location = new System.Drawing.Point(27, 142);
+			this.txtBloco.Name = "txtBloco";
+			this.txtBloco.Size = new System.Drawing.Size(67, 26);
+			this.txtBloco.TabIndex = 136;
 			// 
 			// label2
 			// 
@@ -201,13 +229,13 @@
 			this.label2.TabIndex = 135;
 			this.label2.Text = "Nome:";
 			// 
-			// maskedTextBox2
+			// txtNome
 			// 
-			this.maskedTextBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.maskedTextBox2.Location = new System.Drawing.Point(27, 34);
-			this.maskedTextBox2.Name = "maskedTextBox2";
-			this.maskedTextBox2.Size = new System.Drawing.Size(181, 26);
-			this.maskedTextBox2.TabIndex = 134;
+			this.txtNome.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtNome.Location = new System.Drawing.Point(27, 34);
+			this.txtNome.Name = "txtNome";
+			this.txtNome.Size = new System.Drawing.Size(181, 26);
+			this.txtNome.TabIndex = 134;
 			// 
 			// label5
 			// 
@@ -219,28 +247,29 @@
 			this.label5.TabIndex = 133;
 			this.label5.Text = "CPF:";
 			// 
-			// maskedTextBox4
+			// txtCpf
 			// 
-			this.maskedTextBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.maskedTextBox4.Location = new System.Drawing.Point(27, 89);
-			this.maskedTextBox4.Name = "maskedTextBox4";
-			this.maskedTextBox4.Size = new System.Drawing.Size(181, 26);
-			this.maskedTextBox4.TabIndex = 132;
+			this.txtCpf.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtCpf.Location = new System.Drawing.Point(27, 89);
+			this.txtCpf.Name = "txtCpf";
+			this.txtCpf.Size = new System.Drawing.Size(181, 26);
+			this.txtCpf.TabIndex = 132;
 			// 
-			// button1
+			// btnExcluir
 			// 
-			this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button1.Location = new System.Drawing.Point(27, 189);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(84, 33);
-			this.button1.TabIndex = 127;
-			this.button1.Text = "Excluir";
-			this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.button1.UseVisualStyleBackColor = false;
+			this.btnExcluir.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnExcluir.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+			this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnExcluir.Location = new System.Drawing.Point(27, 189);
+			this.btnExcluir.Name = "btnExcluir";
+			this.btnExcluir.Size = new System.Drawing.Size(84, 33);
+			this.btnExcluir.TabIndex = 127;
+			this.btnExcluir.Text = "Excluir";
+			this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnExcluir.UseVisualStyleBackColor = false;
+			this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
 			// 
 			// btnSalvar
 			// 
@@ -249,13 +278,14 @@
 			this.btnSalvar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
 			this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnSalvar.Location = new System.Drawing.Point(146, 189);
+			this.btnSalvar.Location = new System.Drawing.Point(123, 189);
 			this.btnSalvar.Name = "btnSalvar";
 			this.btnSalvar.Size = new System.Drawing.Size(84, 33);
 			this.btnSalvar.TabIndex = 125;
 			this.btnSalvar.Text = "Salvar";
 			this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnSalvar.UseVisualStyleBackColor = false;
+			this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
 			// 
 			// _ManterVisitante
 			// 
@@ -284,14 +314,16 @@
 		private System.Windows.Forms.ListBox lstPesquisa;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.MaskedTextBox maskedTextBox5;
+		private System.Windows.Forms.MaskedTextBox txtApartamento;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+		private System.Windows.Forms.MaskedTextBox txtBloco;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+		private System.Windows.Forms.MaskedTextBox txtNome;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.MaskedTextBox txtCpf;
+		private System.Windows.Forms.Button btnExcluir;
 		private System.Windows.Forms.Button btnSalvar;
+		private System.Windows.Forms.TextBox txtIDVisitante;
+		private System.Windows.Forms.Button btnLimpar;
 	}
 }

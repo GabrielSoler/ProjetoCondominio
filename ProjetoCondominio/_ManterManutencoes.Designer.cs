@@ -32,18 +32,9 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_ManterManutencoes));
 			this.btnSalvar = new System.Windows.Forms.Button();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.btnLimpar = new System.Windows.Forms.Button();
+			this.txtIDManutencao = new System.Windows.Forms.TextBox();
 			this.rbtNao = new System.Windows.Forms.RadioButton();
-			this.rbtSim = new System.Windows.Forms.RadioButton();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-			this.label5 = new System.Windows.Forms.Label();
-			this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-			this.txtNotas = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
-			this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.btnBuscar = new System.Windows.Forms.Button();
 			this.txtBuscar = new System.Windows.Forms.TextBox();
@@ -51,6 +42,17 @@
 			this.pnlBuscar = new System.Windows.Forms.Panel();
 			this.btnTudo = new System.Windows.Forms.Button();
 			this.lstPesquisa = new System.Windows.Forms.ListBox();
+			this.rbtSim = new System.Windows.Forms.RadioButton();
+			this.label4 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.txtOrcamentoPrevisto = new System.Windows.Forms.MaskedTextBox();
+			this.label5 = new System.Windows.Forms.Label();
+			this.txtLocal = new System.Windows.Forms.MaskedTextBox();
+			this.txtDSProblema = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.btnExcluir = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
+			this.txtDtConclusao = new System.Windows.Forms.MaskedTextBox();
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.panel2.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -64,36 +66,59 @@
 			this.btnSalvar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
 			this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnSalvar.Location = new System.Drawing.Point(193, 259);
+			this.btnSalvar.Location = new System.Drawing.Point(124, 259);
 			this.btnSalvar.Name = "btnSalvar";
 			this.btnSalvar.Size = new System.Drawing.Size(84, 33);
 			this.btnSalvar.TabIndex = 125;
 			this.btnSalvar.Text = "Salvar";
 			this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnSalvar.UseVisualStyleBackColor = false;
+			this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
 			// 
 			// panel2
 			// 
 			this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.panel2.Controls.Add(this.btnLimpar);
+			this.panel2.Controls.Add(this.txtIDManutencao);
 			this.panel2.Controls.Add(this.rbtNao);
 			this.panel2.Controls.Add(this.panel1);
 			this.panel2.Controls.Add(this.rbtSim);
 			this.panel2.Controls.Add(this.label4);
 			this.panel2.Controls.Add(this.label2);
-			this.panel2.Controls.Add(this.maskedTextBox2);
+			this.panel2.Controls.Add(this.txtOrcamentoPrevisto);
 			this.panel2.Controls.Add(this.label5);
-			this.panel2.Controls.Add(this.maskedTextBox4);
-			this.panel2.Controls.Add(this.txtNotas);
+			this.panel2.Controls.Add(this.txtLocal);
+			this.panel2.Controls.Add(this.txtDSProblema);
 			this.panel2.Controls.Add(this.label3);
-			this.panel2.Controls.Add(this.button1);
+			this.panel2.Controls.Add(this.btnExcluir);
 			this.panel2.Controls.Add(this.btnSalvar);
 			this.panel2.Controls.Add(this.label1);
-			this.panel2.Controls.Add(this.maskedTextBox1);
+			this.panel2.Controls.Add(this.txtDtConclusao);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel2.Location = new System.Drawing.Point(0, 0);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(735, 380);
 			this.panel2.TabIndex = 124;
+			// 
+			// btnLimpar
+			// 
+			this.btnLimpar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.btnLimpar.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnLimpar.Location = new System.Drawing.Point(227, 261);
+			this.btnLimpar.Name = "btnLimpar";
+			this.btnLimpar.Size = new System.Drawing.Size(75, 30);
+			this.btnLimpar.TabIndex = 142;
+			this.btnLimpar.Text = "Limpar";
+			this.btnLimpar.UseVisualStyleBackColor = false;
+			this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+			// 
+			// txtIDManutencao
+			// 
+			this.txtIDManutencao.Location = new System.Drawing.Point(227, 207);
+			this.txtIDManutencao.Name = "txtIDManutencao";
+			this.txtIDManutencao.Size = new System.Drawing.Size(100, 20);
+			this.txtIDManutencao.TabIndex = 139;
+			this.txtIDManutencao.Visible = false;
 			// 
 			// rbtNao
 			// 
@@ -106,117 +131,6 @@
 			this.rbtNao.TabStop = true;
 			this.rbtNao.Text = "Não";
 			this.rbtNao.UseVisualStyleBackColor = true;
-			// 
-			// rbtSim
-			// 
-			this.rbtSim.AutoSize = true;
-			this.rbtSim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.rbtSim.Location = new System.Drawing.Point(227, 28);
-			this.rbtSim.Name = "rbtSim";
-			this.rbtSim.Size = new System.Drawing.Size(50, 23);
-			this.rbtSim.TabIndex = 136;
-			this.rbtSim.TabStop = true;
-			this.rbtSim.Text = "Sim";
-			this.rbtSim.UseVisualStyleBackColor = true;
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(224, 12);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(74, 19);
-			this.label4.TabIndex = 138;
-			this.label4.Text = "Concluído:";
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(23, 12);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(132, 19);
-			this.label2.TabIndex = 135;
-			this.label2.Text = "Orçamento previsto:";
-			// 
-			// maskedTextBox2
-			// 
-			this.maskedTextBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.maskedTextBox2.Location = new System.Drawing.Point(27, 34);
-			this.maskedTextBox2.Name = "maskedTextBox2";
-			this.maskedTextBox2.Size = new System.Drawing.Size(181, 26);
-			this.maskedTextBox2.TabIndex = 134;
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(23, 120);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(46, 19);
-			this.label5.TabIndex = 133;
-			this.label5.Text = "Local:";
-			// 
-			// maskedTextBox4
-			// 
-			this.maskedTextBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.maskedTextBox4.Location = new System.Drawing.Point(27, 142);
-			this.maskedTextBox4.Name = "maskedTextBox4";
-			this.maskedTextBox4.Size = new System.Drawing.Size(181, 26);
-			this.maskedTextBox4.TabIndex = 132;
-			// 
-			// txtNotas
-			// 
-			this.txtNotas.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtNotas.Location = new System.Drawing.Point(27, 193);
-			this.txtNotas.Multiline = true;
-			this.txtNotas.Name = "txtNotas";
-			this.txtNotas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.txtNotas.Size = new System.Drawing.Size(181, 43);
-			this.txtNotas.TabIndex = 131;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(23, 171);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(154, 19);
-			this.label3.TabIndex = 129;
-			this.label3.Text = "Descrição do problema:";
-			// 
-			// button1
-			// 
-			this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-			this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.button1.Location = new System.Drawing.Point(60, 259);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(84, 33);
-			this.button1.TabIndex = 127;
-			this.button1.Text = "Excluir";
-			this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.button1.UseVisualStyleBackColor = false;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(20, 64);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(124, 19);
-			this.label1.TabIndex = 114;
-			this.label1.Text = "Data de conclusão:";
-			// 
-			// maskedTextBox1
-			// 
-			this.maskedTextBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.maskedTextBox1.Location = new System.Drawing.Point(27, 86);
-			this.maskedTextBox1.Name = "maskedTextBox1";
-			this.maskedTextBox1.Size = new System.Drawing.Size(181, 26);
-			this.maskedTextBox1.TabIndex = 113;
 			// 
 			// panel1
 			// 
@@ -243,6 +157,7 @@
 			this.btnBuscar.TabIndex = 119;
 			this.btnBuscar.Text = "Buscar";
 			this.btnBuscar.UseVisualStyleBackColor = false;
+			this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
 			// 
 			// txtBuscar
 			// 
@@ -286,6 +201,7 @@
 			this.btnTudo.Text = "Exibir Todos";
 			this.btnTudo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btnTudo.UseVisualStyleBackColor = false;
+			this.btnTudo.Click += new System.EventHandler(this.btnTudo_Click);
 			// 
 			// lstPesquisa
 			// 
@@ -300,6 +216,119 @@
 			this.lstPesquisa.ScrollAlwaysVisible = true;
 			this.lstPesquisa.Size = new System.Drawing.Size(194, 106);
 			this.lstPesquisa.TabIndex = 7;
+			this.lstPesquisa.Click += new System.EventHandler(this.lstPesquisa_Click);
+			// 
+			// rbtSim
+			// 
+			this.rbtSim.AutoSize = true;
+			this.rbtSim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.rbtSim.Location = new System.Drawing.Point(227, 28);
+			this.rbtSim.Name = "rbtSim";
+			this.rbtSim.Size = new System.Drawing.Size(50, 23);
+			this.rbtSim.TabIndex = 136;
+			this.rbtSim.TabStop = true;
+			this.rbtSim.Text = "Sim";
+			this.rbtSim.UseVisualStyleBackColor = true;
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.Location = new System.Drawing.Point(224, 12);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(74, 19);
+			this.label4.TabIndex = 138;
+			this.label4.Text = "Concluído:";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Location = new System.Drawing.Point(23, 12);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(132, 19);
+			this.label2.TabIndex = 135;
+			this.label2.Text = "Orçamento previsto:";
+			// 
+			// txtOrcamentoPrevisto
+			// 
+			this.txtOrcamentoPrevisto.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtOrcamentoPrevisto.Location = new System.Drawing.Point(27, 34);
+			this.txtOrcamentoPrevisto.Name = "txtOrcamentoPrevisto";
+			this.txtOrcamentoPrevisto.Size = new System.Drawing.Size(181, 26);
+			this.txtOrcamentoPrevisto.TabIndex = 134;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Location = new System.Drawing.Point(23, 120);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(46, 19);
+			this.label5.TabIndex = 133;
+			this.label5.Text = "Local:";
+			// 
+			// txtLocal
+			// 
+			this.txtLocal.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtLocal.Location = new System.Drawing.Point(27, 142);
+			this.txtLocal.Name = "txtLocal";
+			this.txtLocal.Size = new System.Drawing.Size(181, 26);
+			this.txtLocal.TabIndex = 132;
+			// 
+			// txtDSProblema
+			// 
+			this.txtDSProblema.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtDSProblema.Location = new System.Drawing.Point(27, 193);
+			this.txtDSProblema.Multiline = true;
+			this.txtDSProblema.Name = "txtDSProblema";
+			this.txtDSProblema.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+			this.txtDSProblema.Size = new System.Drawing.Size(181, 43);
+			this.txtDSProblema.TabIndex = 131;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.Location = new System.Drawing.Point(23, 171);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(154, 19);
+			this.label3.TabIndex = 129;
+			this.label3.Text = "Descrição do problema:";
+			// 
+			// btnExcluir
+			// 
+			this.btnExcluir.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnExcluir.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+			this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnExcluir.Location = new System.Drawing.Point(27, 258);
+			this.btnExcluir.Name = "btnExcluir";
+			this.btnExcluir.Size = new System.Drawing.Size(84, 33);
+			this.btnExcluir.TabIndex = 127;
+			this.btnExcluir.Text = "Excluir";
+			this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.btnExcluir.UseVisualStyleBackColor = false;
+			this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(20, 64);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(124, 19);
+			this.label1.TabIndex = 114;
+			this.label1.Text = "Data de conclusão:";
+			// 
+			// txtDtConclusao
+			// 
+			this.txtDtConclusao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtDtConclusao.Location = new System.Drawing.Point(27, 86);
+			this.txtDtConclusao.Name = "txtDtConclusao";
+			this.txtDtConclusao.Size = new System.Drawing.Size(181, 26);
+			this.txtDtConclusao.TabIndex = 113;
 			// 
 			// contextMenuStrip1
 			// 
@@ -328,7 +357,7 @@
 		private System.Windows.Forms.Button btnSalvar;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+		private System.Windows.Forms.MaskedTextBox txtDtConclusao;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Button btnBuscar;
 		private System.Windows.Forms.TextBox txtBuscar;
@@ -336,16 +365,18 @@
 		private System.Windows.Forms.Panel pnlBuscar;
 		private System.Windows.Forms.Button btnTudo;
 		private System.Windows.Forms.ListBox lstPesquisa;
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnExcluir;
 		private System.Windows.Forms.RadioButton rbtNao;
 		private System.Windows.Forms.RadioButton rbtSim;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+		private System.Windows.Forms.MaskedTextBox txtOrcamentoPrevisto;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-		private System.Windows.Forms.TextBox txtNotas;
+		private System.Windows.Forms.MaskedTextBox txtLocal;
+		private System.Windows.Forms.TextBox txtDSProblema;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+		private System.Windows.Forms.TextBox txtIDManutencao;
+		private System.Windows.Forms.Button btnLimpar;
 	}
 }

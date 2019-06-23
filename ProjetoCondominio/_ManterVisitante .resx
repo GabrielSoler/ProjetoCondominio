@@ -175,7 +175,7 @@
         ////////
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnExcluir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk2iBwAAAAAAADYAAAAoAAAAGQAAABkAAAABABgAAAAAAAAAAADEDgAAxA4AAAAAAAAAAAAA////////
         ////////////////////////////////////////////////////////////////////////////////

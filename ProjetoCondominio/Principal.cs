@@ -35,6 +35,7 @@ namespace ProjetoCondominio
 			SidePanel.Height = btnHome.Height;
 			SidePanel.Top = btnHome.Top;
 			homeControl1.BringToFront();
+
 		}
 
 		private void btnRelCusto_Click(object sender, EventArgs e)
@@ -79,12 +80,17 @@ namespace ProjetoCondominio
 		{
 			SidePanel.Height = btn_ManterVisitante.Height;
 			SidePanel.Top = btn_ManterVisitante.Top;
-			_Materiais1.BringToFront();
+			_ManterVisitante1.BringToFront();
 		}
 
 		private void panel4_Paint(object sender, PaintEventArgs e)
 		{
 			
+		}
+
+		private void _ManterVisitante1_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

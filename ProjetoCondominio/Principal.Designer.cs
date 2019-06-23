@@ -33,6 +33,7 @@
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.button6 = new System.Windows.Forms.Button();
 			this.button7 = new System.Windows.Forms.Button();
@@ -47,16 +48,17 @@
 			this.btn_ManterVisitante = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel4 = new System.Windows.Forms.Panel();
+			this._ManterVisitante1 = new ProjetoCondominio._ManterVisitante();
 			this._Reservas1 = new ProjetoCondominio._Reservas();
 			this._RelatoriosDeCustos1 = new ProjetoCondominio._RelatoriosDeCustos();
 			this._Materiais1 = new ProjetoCondominio._Materiais();
 			this._ManterUsuario1 = new ProjetoCondominio._ManterUsuario();
 			this._ManterManutencoes1 = new ProjetoCondominio._ManterManutencoes();
 			this.homeControl1 = new ProjetoCondominio.HomeControl();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.panel3.SuspendLayout();
-			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panel2
@@ -100,6 +102,16 @@
 			this.label2.Size = new System.Drawing.Size(100, 18);
 			this.label2.TabIndex = 4;
 			this.label2.Text = "Condomínio";
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.Location = new System.Drawing.Point(21, 18);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(68, 65);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBox1.TabIndex = 4;
+			this.pictureBox1.TabStop = false;
 			// 
 			// label4
 			// 
@@ -297,6 +309,14 @@
 			this.panel4.TabIndex = 13;
 			this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
 			// 
+			// _ManterVisitante1
+			// 
+			this._ManterVisitante1.Location = new System.Drawing.Point(183, 125);
+			this._ManterVisitante1.Name = "_ManterVisitante1";
+			this._ManterVisitante1.Size = new System.Drawing.Size(735, 380);
+			this._ManterVisitante1.TabIndex = 14;
+			this._ManterVisitante1.Load += new System.EventHandler(this._ManterVisitante1_Load);
+			// 
 			// _Reservas1
 			// 
 			this._Reservas1.Location = new System.Drawing.Point(183, 125);
@@ -341,15 +361,13 @@
 			this.homeControl1.Size = new System.Drawing.Size(735, 407);
 			this.homeControl1.TabIndex = 5;
 			// 
-			// pictureBox1
+			// textBox1
 			// 
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(21, 18);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(68, 65);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 4;
-			this.pictureBox1.TabStop = false;
+			this.textBox1.Location = new System.Drawing.Point(206, 367);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(100, 20);
+			this.textBox1.TabIndex = 15;
+			this.textBox1.Visible = false;
 			// 
 			// Main
 			// 
@@ -357,6 +375,8 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(913, 535);
+			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this._ManterVisitante1);
 			this.Controls.Add(this.panel4);
 			this.Controls.Add(this._Reservas1);
 			this.Controls.Add(this._RelatoriosDeCustos1);
@@ -379,8 +399,8 @@
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.panel3.ResumeLayout(false);
 			this.panel3.PerformLayout();
-			this.panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -412,6 +432,8 @@
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.PictureBox pictureBox1;
+		private _ManterVisitante _ManterVisitante1;
+		private System.Windows.Forms.TextBox textBox1;
 	}
 }
 

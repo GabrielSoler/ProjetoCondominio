@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dc85ce1a24c44cb798cc760f9963847c" Name="Diagram1">
+        <EntityTypeShape EntityType="ProjetoCondominioModel.Condomino" Width="1.5" PointX="5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoCondominioModel.Custos" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoCondominioModel.Manutencao" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoCondominioModel.Material" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoCondominioModel.MaterialManuntecaoCusto" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoCondominioModel.Pessoa" Width="1.5" PointX="2.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoCondominioModel.Reserva" Width="1.5" PointX="7.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoCondominioModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjetoCondominioModel.Visitante" Width="1.5" PointX="5" PointY="8.125" IsExpanded="true" />
+        <AssociationConnector Association="ProjetoCondominioModel.FK_Condomino_Pessoa" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetoCondominioModel.FK_Reserva_Condomino" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetoCondominioModel.FK_MaterialManuntecaoCusto_Custos" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetoCondominioModel.FK_MaterialManuntecaoCusto_Manutencao" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetoCondominioModel.FK_MaterialManuntecaoCusto_Material" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjetoCondominioModel.FK_Visitante_Visitante" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
